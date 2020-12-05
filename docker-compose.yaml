@@ -1,0 +1,7 @@
+version: '3'
+services:
+  matrip:
+    build: dockerfile
+    volumes:
+      - .:/app/matrip
+    working_dir: /app/matrip
