@@ -104,7 +104,7 @@ def generate_base_table(measures, expressions, context):
         result += f"CREATE MATERIALIZED VIEW {name} AS SELECT {values} FROM {table} GROUP BY {group_by_expression};\n"
 
 
-    result += f"CREATE VIEW base AS SELECT {','.join(['*'] + expressions)} FROM {base_by_table[0]}"
+    result += f"CREATE VIEW base AS SELECT {','.join(expressions)} FROM {base_by_table[0]}"
     for table in base_by_table[1:]:
         on_condtion = []
         for key in context.group_by:

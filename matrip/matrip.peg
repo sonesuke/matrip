@@ -7,5 +7,5 @@ number = r'\d*\.\d*|\d+'
 factor = ("+" / "-")?
           (measure / number / "(" expression ")")
 term = factor (( "*" / "/") factor)*
-expression = term (("+" / "-") term)*
+expression = term (("+" / "-") term)*";"
 matrip = expression + EOF
