@@ -136,14 +136,16 @@ def test_measure_6():
     correct = """
     CREATE MATERIALIZED VIEW table_a_c AS
     SELECT
-        SUM(field_a) AS SUM_table_a_field_a
+        SUM(field_a) AS SUM_table_a_field_a,
+        COUNT(field_a) AS COUNT_table_a_field_a,
     FROM
         table_a
     GROUP BY
         field_x,field_y;
     CREATE VIEW base AS
     SELECT
-        SUM_table_a_field_a
+        SUM_table_a_field_a,
+        COUNT_table_a_field_a
     FROM
         table_a_c;
     """
